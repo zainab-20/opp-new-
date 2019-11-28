@@ -1,1 +1,386 @@
 
+#include<iostream>
+using namespace std;
+class Customer_Bank{
+  
+private:
+    int a,b,c;
+public:
+    
+    void input_Amount(){
+    cout<<"Enter the Amount to Deposit :";
+    cin>>a;
+    }
+    void withdraw_Amount(){
+        cout<<"Enter the Withdraw Amount:";
+        cin>>b;
+    }
+   void condition(){
+		if(b>a)
+    	{
+	        cout<<"Withdrawal amount exceeded the Account Balance!"<<endl<<endl;    
+    	}
+    else if(b<a) {
+        c=a-b;
+        cout<<"\nYour Remaining Amount is "<<c<<endl<<endl;
+        cout<<"Thanks for using Our Bank"<<endl<<endl;       
+    }
+    else {
+    	cout<<"Your balance is : "<<a-b;
+	}
+}
+};
+int main()
+{	
+	int a;
+    cout<<"zainab Bank Limited!"<<endl<<endl;
+    cout<<a;
+    Customer_Bank obj;
+    obj.input_Amount();
+    obj.withdraw_Amount();
+    obj.condition();
+    
+    return 0;
+}
+
+
+#include<iostream>
+#include<string>
+using namespace std;
+
+class invoice{
+  
+public:
+    string part,description_part;
+    int quantity,price;
+    double VAT,Discount;
+    
+public:
+
+    
+    invoice(string P1,string D,int Q,int P,double v1,double d1){
+        
+        part=P1;
+        description_part=D;
+        quantity=Q;
+        price=P;
+        VAT=v1;
+        Discount=d1;
+       
+//        cout<<"I am A constructor";
+    }
+//    ~invoice(){
+//    	cout<<"I am A destrucor";
+//	}
+    public:
+    void getparts ()
+    {	cout<<"Part no: "<<part<<endl<<"Parts Description: "<<description_part<<endl<<"Quantity of item: "<<quantity<<endl<<"Price: "<<price<<endl<<"VAT: "<<VAT<<endl<<"Discount: "<<Discount<<endl<<endl;
+// 
+    }
+    void setpart(string P1,string D,int Q,int P,double v1,double d1){
+        part=P1;
+        description_part=D;
+        quantity=Q;
+        price=P;
+        VAT=v1;
+        Discount=d1;
+//        cout<<"Part no: "<<part<<endl<<"Parts Description: "<<description_part<<endl<<"Quantity of item: "<<quantity<<endl<<"Price: "<<price<<endl<<"VAT: "<<VAT<<endl<<"Discount: "<<Discount<<endl;
+//        cout<<"Part no"<<endl<<"Parts Description"<<endl<<"Quantity of item"<<endl<<"Price"<<endl<<"VAT"<<endl<<"Discount"<<endl;
+    }
+    };
+
+int main()
+{
+  		invoice obj("Bulb","Light",5,550,0.2,0);
+//    invoice a("Bulb","Light",5,550,0.2,0);
+
+    obj.getparts();
+    cout<< "Invoice Updated"<< endl;
+    obj.setpart("hardisk", "sanDisk", 9, 300, 0.5, 0);
+    obj.getparts();
+    return 0;
+}
+
+
+#include <iostream>
+#include<string>
+using namespace std;
+
+    class MotorVehicle{
+    private:
+        string motor_vehicle,FuelType,color;
+        int yearOfManuFacture,engineCapacity;
+
+    public:
+        MotorVehicle(string m,string f,string c){
+            motor_vehicle=m;
+            FuelType=f;
+            color=c;
+            }
+        
+        void getpart(){
+            cout<<"Motor Vehicle:"<<motor_vehicle<<endl<<"Fuel Type:"<<FuelType<<endl<<"Color:"<<color<<endl<<"Year of Manufacture:"<<"2018"<<endl<<"Engine Capacity:"<<"1500"<<endl;
+            }
+        void setpart(string a){
+            motor_vehicle=a;
+            }
+        void displaycardetail(){
+            getpart();
+        }
+            };
+    
+int main()
+{
+    MotorVehicle a("Toyota","High Obtained","Formula Red Turbo");
+    a.displaycardetail();
+    //a.getpart();
+    return 0;
+}
+
+
+#include <iostream>
+#include <string>
+using namespace std;
+class Date{
+public:
+int day,month,year;
+Date(int d, int m, int y){
+day =d;
+year =y;
+//month = m;
+	if(m>12 || m<1){
+		month=1;
+	}
+	else if(m<12 && m>1)
+	{
+	month =m;
+	}}
+
+void displaydate(){
+cout<<"Date "<<day<<"\\"<<month<<"\\"<<year<<"\n";
+}
+void setday(int a){
+day =a;
+}
+void setmonth(int a){
+month = a;
+}
+void setyear(int a){
+year= a;
+}
+};
+
+int main()
+{
+Date d(11,6,2019) ;
+d.displaydate();
+d.setday(15);
+d.setmonth(12);
+d.displaydate();
+}
+
+
+#include <iostream>
+#include <string>
+using namespace std;
+class list{
+  unsigned int account_number;
+    string FN,LN;
+    double balance;
+public:
+    list(unsigned int a,string f,string l,double b ){
+        
+        account_number=a;
+        FN=f;
+        LN=l;
+        balance=b;
+    }
+    void getpart(){
+        cout<<"Account Number:"<<account_number<<"\nFirst Name:"<<FN<<"\nLast Name:"<<LN<<"\nBalance:"<<balance<<endl;
+        }
+    void setpart(unsigned int a){
+        account_number=a;
+        }};
+int main()
+{
+    list listt(0012,"MISS","ZAINAB",90000);
+    listt.getpart();
+    return 0;
+}
+
+
+#include<iostream>
+#include<string>
+using namespace std;
+
+class HeartRates{
+private:
+    string firstname;
+    string lastname;
+    int day,month,year,Age,maxh;
+    float fifty,eighty;
+public:
+    HeartRates(string fname,string lname,int d,int m,int y){
+        firstname=fname;
+        lastname=lname;
+        day=d;
+        month=m;
+        year=y;
+        getfirstname();
+        getlastname();
+        age();
+        maxheartrate();
+        targetheartrate();
+    }
+    void getfirstname(){
+        cout<<"Your First Name is:"<<firstname<<"\n";
+    }
+    void getlastname(){
+        cout<<"Your Second Name is:"<<lastname<<"\n";
+    }
+    void getDOB(){
+        cout<<"Your Date of Birth is:"<<day<<"//"<<month<<"//"<<year<<"\n";
+    }
+    void setfirstname(string a){
+        firstname=a;
+    }
+    void setlastname(string a){
+        lastname=a;
+    }
+    void setdob(int d,int m,int y){
+        day=d;
+        month=m;
+        year=y;
+    }
+    void age(){
+        Age=2019-year;
+        cout<<"Age in Years="<<Age<<"\n";
+    }
+    void maxheartrate(){
+        maxh=220-Age;
+        cout<<"Maximum HeartRate is: "<<maxh<<"\n";
+    }
+    void targetheartrate(){
+        fifty=maxh*.5;
+        eighty=maxh*.8;
+        cout<<"Your Target HeartRate is 50%-80%: "<<fifty<<" to "<<eighty<<"\n";
+    }
+    
+};
+int main()
+{
+    HeartRates hr("zainab","khalid",12,5,1999);
+    hr.setfirstname("WIDI");
+    hr.getfirstname();
+    return 0;
+}
+
+
+#include <iostream>
+#include<string>
+using namespace std;
+
+class healthprofileclass{
+private:
+    string FN,LN,Gen;
+    int D,M,Y;
+    float height,weight;
+    int yy=2019,age,hr,thr,we,he,wee;
+public:
+    healthprofileclass(string f,string l,string g,int d,int m,int y,float h,float w){
+        FN=f;
+        LN=l;
+        Gen=g;
+        D=d;
+        M=m;
+        Y=y;
+        height=h;
+        weight=w;
+        }
+    void getName(){
+        cout<<"Name:"<<FN<<LN;
+        }
+    void setName(string a){
+        a=FN;
+        }
+    void memfunc(){
+            age=2019-Y;
+            hr=220-age;
+            thr=hr-70;
+            he=5.2*12;
+            we=(weight)*(1000/450);
+        }
+    void output(){
+        cout<<"=========>Computerization of Health Records\n";
+        memfunc();
+        cout<<"Date of Birth:"<<age<<endl;
+        cout<<"Your Heart rate:"<<hr<<endl;
+        cout<<"Target Heart rate:"<<thr<<endl;
+        cout<<"Your Heigth in Foot:5.2"<<"Height in Inches:"<<he<<"inches"<<endl;
+        cout<<"Your Weight in KG:67  "<<"Weight in LB:"<<we<<"LB"<<endl;
+        }
+};
+int main()
+{
+    healthprofileclass a("zainab","khalid","female",20,5,1999,5.2,67);
+    a.output();
+    return 0;
+}
+
+
+
+
+#include<iostream>
+#include<string>
+using namespace std;
+
+class Electric_bill{
+private:
+    double amount_paid;
+public:
+    Electric_bill(double ap){
+        amount_paid=ap;
+        
+    }
+    
+    void getpart(){
+        
+        
+    }
+    
+    void setamountpaid(double a){
+        amount_paid=a;
+        if(amount_paid<0){
+                  amount_paid=0;
+              }
+    }
+    
+    double getVat(){
+        return amount_paid * 0.18;
+    }
+    double getEWURA(){
+        return amount_paid *0.1;
+    }
+    double getREA(){
+        return amount_paid *0.03;
+    }
+    double getunits(){
+        
+        return (amount_paid-getVat()-getREA()-getEWURA()-5000)/295;
+        
+    }
+    
+    void output(){
+     
+        cout<<"Amount Paid:"<<amount_paid<<"\nVAT 18%:"<<getVat()<<"\nEUWRA:"<<getEWURA()<<"\nREA:"<<getREA()<<"\nDeducted Fixed Charges 5000Shiling "<<"\nUnit:"<<getunits()<<endl;
+    }
+    };
+int main()
+{
+    double amount;
+    cout<<"Amount of Tanzanian Shillings:";
+    cin>>amount;
+    Electric_bill eb(amount);
+    eb.output();
+    return 0;
+}
